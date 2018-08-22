@@ -1,0 +1,19 @@
+#https://www.websequencediagrams.com/
+kayttaja->selain:
+note left of selain
+kayttaja siirtyy sivulle
+https://fullstack-exampleapp.herokuapp.com/notes
+end note
+selain->palvelin: GET https://fullstack-exampleapp.herokuapp.com/
+note left of palvelin
+  muodostetaan HTML mihin luodaan lista muistiinpanoista
+end note
+palvelin->selain: status 200, sivun HTML-koodi
+
+selain->palvelin: GET https://fullstack-exampleapp.herokuapp.com/data.json
+palvelin->selain: status 200, data.json
+
+note left of selain
+ selain näyttää palvelimen palauttaman HTML:n
+ johon on listattu data.jsonin sisältämät muistiinpanot
+end note

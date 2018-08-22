@@ -1,0 +1,22 @@
+#https://www.websequencediagrams.com/
+kayttaja->selain:
+note left of selain
+käyttäjä siirtyy sivulle
+https://fullstack-exampleapp.herokuapp.com/spa
+end note
+selain->palvelin: GET https://fullstack-exampleapp.herokuapp.com/spa
+note left of palvelin
+  muodostetaan HTML pohja muistiinpanoille
+end note
+palvelin->selain: status 200, sivun HTML-koodi
+
+note right of selain:
+    spa.js tekee GET-requestin data.json tiedostolle
+end note
+selain->palvelin: GET https://fullstack-exampleapp.herokuapp.com/data.json
+
+palvelin->selain: status 200, data.json
+
+note left of selain
+ muokataan DOMia lisäämällä data.jsonin sisältö
+end note
